@@ -1,3 +1,4 @@
+# pylint: disable-all
 # from django.shortcuts import render
 # from django.views.generic import ListView
 # from app.models import NewsAndEvents

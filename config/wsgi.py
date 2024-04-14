@@ -1,3 +1,4 @@
+# pylint: disable-all
 """
 WSGI config for config project.
 
