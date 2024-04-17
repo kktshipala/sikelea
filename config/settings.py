@@ -10,18 +10,14 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
+# pylint: disable-all
 from pathlib import Path
 import os
 import posixpath
 import dj_database_url
 import environ
+
 # Environment variables
-
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
-
 
 from six import python_2_unicode_compatible
 import django.utils.encoding
@@ -31,23 +27,27 @@ import sys
 
 
 
+
+env = environ.Env()
+environ.Env.read_env()
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = Path(__file_).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import environ
-env = environ.Env()
-environ.Env.read_env()
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = "o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
@@ -72,6 +72,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "rest_framework",
+   
 ]
 
 # Custom apps
@@ -84,6 +85,7 @@ PROJECT_APPS = [
     "quiz.apps.QuizConfig",
     "payments.apps.PaymentsConfig",
     "crispy_bootstrap4",
+     'preventconcurrentlogins',
 ]
 
 # Combine all apps
@@ -97,6 +99,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+     'preventconcurrentlogins.middleware.PreventConcurrentLoginsMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -140,28 +143,32 @@ ASGI_APPLICATION = "config.asgi.application"
 # NOTE: Some model fields may not work on sqlite db,
 # so consider using postgresql instead
 
-'''
+
 
 DATABASES = {
     
-    'default':{
+    'default':dj_database_url.parse(env('DATABASE_URL'))
+      
+      #  'default':{
        
-      'ENGINE' :'django.db.backends.postgresql',
-        'NAME' :'NewDB',
-        'USER':'postgres',
-       'PASSWORD' : 'Shaty@12',
-        'HOST' :'localhost',
-        'PORT' :'5432',
+     # 'ENGINE' :'django.db.backends.postgresql',
+     #   'NAME' :'king',
+     #   'USER':'postgres',
+     #  'PASSWORD' : 'Dembe@12',
+     #  'HOST' :'localhost',
+     #  'PORT' :'5432',
+
+  # }
+      
+     
 
     }
-}
-
-
-'''
-DATABASES = {
     
-    'default': dj_database_url.parse(env('DATABASE_URL'))
-}
+    
+
+
+
+
 
 
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
@@ -197,7 +204,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -217,12 +224,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = (
-    "smtp.gmail.com"  # Here i'm using gmail as the email host, but you can change it
+    "smtp.gmail.com"  # Here lojs xogb twex tjst i'm using gmail as the email host, but you can change it
 )
-EMAIL_PORT = 587
+EMAIL_PORT = 465
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'shatytshipala@gmail.com'
-EMAIL_HOST_PASSWORD = 'qnesycjhgbgekewp'
+EMAIL_HOST_USER = "kktshipala@gmail.com"
+EMAIL_HOST_PASSWORD = "lojsxogbtwextjst"
 
 # crispy config
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -242,8 +249,8 @@ REST_FRAMEWORK = {
 }
 
 # Strip payment config
-STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
-STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
+#STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
+#STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
 
 
 #AWS_ACCESS_KEY_ID ="AKIAU6GD3B4R6IKQGUDR"
