@@ -9,9 +9,12 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
 import os
-
+from dotenv import load_dotenv
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+
+SIKELEA = '/SIKELEA/CONFIG'  # adjust as appropriate
+load_dotenv(os.path.join(SIKELEA, '.env'))
 
 application = get_wsgi_application()
