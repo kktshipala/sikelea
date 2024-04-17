@@ -23,6 +23,14 @@ env = environ.Env()
 environ.Env.read_env()
 
 
+from six import python_2_unicode_compatible
+import django.utils.encoding
+django.utils.encoding.python_2_unicode_compatible = python_2_unicode_compatible
+import collections.abc
+import sys
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = Path(__file_).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
