@@ -24,6 +24,7 @@ import django.utils.encoding
 django.utils.encoding.python_2_unicode_compatible = python_2_unicode_compatible
 import collections.abc
 import sys
+from collections.abc import MutableSet
 
 
 
