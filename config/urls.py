@@ -12,7 +12,7 @@ from django.views.generic.base import RedirectView
 admin.site.site_header = "ESYSTEM "
 
 urlpatterns = [
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico')))
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico'))),
     path("jet/", include("jet.urls", "jet")),  # Django JET URLS
     path(
         "jet/dashboard/", include("jet.dashboard.urls", "jet-dashboard")
