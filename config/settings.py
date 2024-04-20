@@ -214,7 +214,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-     '/SIKELEA/static',
+     '/SIKELEA/static/',
+     '/SIKELEA/static/css/',
 ]
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
