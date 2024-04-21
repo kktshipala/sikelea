@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 # pylint: disable-all
 from pathlib import Path
+from django.conf import settings
 import os
 import posixpath
 import dj_database_url
@@ -213,9 +214,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-     '/SIKELEA/static/',
-     '/SIKELEA/static/css/',
+    os.path.join(BASE_DIR, 'SIKELEA/static/'),
+     
+    
 ]
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
