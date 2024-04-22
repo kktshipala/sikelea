@@ -219,13 +219,14 @@ STATICFILES_DIRS = [
 
     
 ]
-#STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
+
 
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/media")
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
 # -----------------------------------
 # E-mail configuration
