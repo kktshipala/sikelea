@@ -65,7 +65,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "SIKELEA",
+    
    #s "advanced_filters"
   #  "postgressql.connector.django",
 
