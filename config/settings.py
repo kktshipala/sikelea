@@ -65,6 +65,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "SIKELEA",
    #s "advanced_filters"
   #  "postgressql.connector.django",
 
@@ -88,12 +89,14 @@ PROJECT_APPS = [
     "payments.apps.PaymentsConfig",
     "crispy_bootstrap4",
      'preventconcurrentlogins',
+     
 ]
 
 # Combine all apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
+    "whitenoise.Middleware.whitenoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
