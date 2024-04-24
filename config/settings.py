@@ -47,7 +47,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -215,36 +215,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-#STATIC_URL = "/static/"
-#MEDIA_URL = "/media/"
-#STATICFILES_DIRS = [
-  #  os.path.join(BASE_DIR, "static"),
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
 
     
-#]
+]
 
 
 
-#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-#MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-
-
-
-STATIC_URL = '/static/'
-
-MEDIA_URL = '/media/'
-
-if DEBUG:
-
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-else:
-
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
