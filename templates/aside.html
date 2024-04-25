@@ -87,7 +87,8 @@
 
 			{% if request.user.is_lecturer %}
 			<li class="{% if request.path == ascore %}active{% endif %}">
-				<a href="{% url 'add_score' %}"><i class="fas fa-tasks icon"></i>Manage Student Marks & Attendance Register</a>
+				<a href="{% url 'add_score' %}"><i class="fas fa-tasks icon"></i>Manage Student Marks & Attendance
+					Register</a>
 			</li>
 			{% endif %}
 
