@@ -68,6 +68,7 @@ DJANGO_APPS = [
     
     "django.contrib.staticfiles",
     
+    
    #s "advanced_filters"
   #  "postgressql.connector.django",
 
