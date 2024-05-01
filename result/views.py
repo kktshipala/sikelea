@@ -486,7 +486,7 @@ def result_sheet_pdf_view(request, id):
     # l_pic.__setattr__("_offs_y", -130)
     # Story.append(l_pic)
 
-    # logo = settings.MEDIA_ROOT + "/logo/img/school4.PNG"
+    # logo = settings.MEDIA_ROOT + "/logo/img/schoollogo7.PNG"
     # im_logo = Image(logo, 1*inch, 1*inch)
     # im_logo.__setattr__("_offs_x", -218)
     # im_logo.__setattr__("_offs_y", -60)
