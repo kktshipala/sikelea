@@ -1,16 +1,12 @@
 # pylint: disable-all
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 from django.conf.urls import handler404, handler500, handler400
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
-
-from django.conf import settings
-
-from django.views.static import serve
 
 admin.site.site_header = "ESYSTEM "
 

@@ -57,7 +57,6 @@ AUTH_USER_MODEL = "accounts.User"
 # Application definition
 
 DJANGO_APPS = [
-    
     "jet.dashboard",
     "jet",
     "django.contrib.admin",
@@ -65,10 +64,7 @@ DJANGO_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    
     "django.contrib.staticfiles",
-    
-    
    #s "advanced_filters"
   #  "postgressql.connector.django",
 
@@ -92,16 +88,17 @@ PROJECT_APPS = [
     "payments.apps.PaymentsConfig",
     "crispy_bootstrap4",
      'preventconcurrentlogins',
-     
+   
+    # ...
 ]
 
 # Combine all apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
-  
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware", 
+
+
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -109,6 +106,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
      'preventconcurrentlogins.middleware.PreventConcurrentLoginsMiddleware',
+     
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -132,7 +130,7 @@ TEMPLATES = [
         },
     },
 ]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 WSGI_APPLICATION = "config.wsgi.application"
 
 ASGI_APPLICATION = "config.asgi.application"
@@ -223,18 +221,16 @@ STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-     "/SIKELEA/static/",
 
     
 ]
 
 
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/media")
+
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-
-
 #STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
 # -----------------------------------
@@ -265,6 +261,8 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.BasicAuthentication",
     ],
 }
+
+
 
 # Strip payment config
 #STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
