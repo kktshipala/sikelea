@@ -176,7 +176,7 @@ DATABASES = {
 
 STORAGES = {
     # ...
-    "staticfiles": {"BACKEND": "myproject.storage.S3Storage"}
+    "staticfiles": {"BACKEND": "SIKELEA.storage.S3Storage"}
 }
 
 
