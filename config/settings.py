@@ -226,7 +226,7 @@ STATICFILES_DIRS = [
 
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "SIKELEA/static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "SIKELEA/static/media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "SIKELEA/staticfiles")
 
