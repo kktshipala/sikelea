@@ -97,7 +97,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -108,6 +108,9 @@ MIDDLEWARE = [
      'preventconcurrentlogins.middleware.PreventConcurrentLoginsMiddleware',
      
 ]
+
+STATICFILES_STORAGE = \
+    'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = "config.urls"
 
