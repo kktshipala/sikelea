@@ -26,7 +26,7 @@ urlpatterns = [
     path("accounts/api/", include("accounts.api.urls", namespace="accounts-api")),
     path("admin/", admin.site.urls),
   #  path("",include("user_sessions.urls", "user_sessions")),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
