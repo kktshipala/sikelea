@@ -239,20 +239,6 @@ course_videos = os.path.join(MEDIA_ROOT, "course_videos")
 #MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
 #STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
 # -----------------------------------
