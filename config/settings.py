@@ -236,6 +236,9 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 course_files = os.path.join(MEDIA_ROOT, "course_files")
 course_videos = os.path.join(MEDIA_ROOT, "course_videos")
+profile_pictures = os.path.join(MEDIA_ROOT, "profile_pictures")
+registration_form = os.path.join(MEDIA_ROOT, "registration_form")
+result_sheet = os.path.join(MEDIA_ROOT, "result_sheet")
 #MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
