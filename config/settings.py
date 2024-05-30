@@ -97,7 +97,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -108,9 +108,6 @@ MIDDLEWARE = [
      'preventconcurrentlogins.middleware.PreventConcurrentLoginsMiddleware',
      
 ]
-
-STATICFILES_STORAGE = \
-    'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = "config.urls"
 
@@ -180,6 +177,7 @@ DATABASES = {
 
 
 
+
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -219,28 +217,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = "static/"
-MEDIA_URL = "media/"
+STATIC_URL = "/staticfiles/"
+MEDIA_URL = "/media/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    ]
+     "/media/course_files/"
+     "/media/course_videos/"
+     "/media/profile_pictures/"
+     "/media/registration_form/"
+     "/media/result_sheet"
+
+]
 
 
 
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+course_files = os.path.join(MEDIA_ROOT, "course_files")
+course_videos = os.path.join(MEDIA_ROOT, "course_videos")
+#MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-
-
-
-
-
-
-
-
 #STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ["staticfiles"]))
 
 # -----------------------------------
