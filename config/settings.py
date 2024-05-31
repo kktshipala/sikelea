@@ -122,10 +122,10 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                # 'django.template.context_processors.i18n',
-                # 'django.template.context_processors.media',
-                # 'django.template.context_processors.static',
-                # 'django.template.context_processors.tz',
+                 'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                 'django.template.context_processors.static',
+                 'django.template.context_processors.tz',
             ],
         },
     },
@@ -217,28 +217,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = "/staticfiles/"
-MEDIA_URL = "/media/"
+STATIC_URL = "static/"
+#MEDIA_URL = "media/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-     "/media/course_files/"
-     "/media/course_videos/"
-     "/media/profile_pictures/"
-     "/media/registration_form/"
-     "/media/result_sheet"
-
-]
+    ]
 
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # 'data' is my media folder
+MEDIA_URL = '/media/'
 
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-course_files = os.path.join(MEDIA_ROOT, "course_files")
-course_videos = os.path.join(MEDIA_ROOT, "course_videos")
-profile_pictures = os.path.join(MEDIA_ROOT, "profile_pictures")
-registration_form = os.path.join(MEDIA_ROOT, "registration_form")
-result_sheet = os.path.join(MEDIA_ROOT, "result_sheet")
 #MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
