@@ -109,6 +109,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
      'preventconcurrentlogins.middleware.PreventConcurrentLoginsMiddleware',
+      'debug_toolbar.middleware.DebugToolbarMiddleware' # <-- HERE
      
 ]
 
@@ -216,7 +217,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+def show_toolbar(request):
+    return True
 
+DEBUG_TOOLBAR_CONFIG = {
+  "SHOW_TOOLBAR_CALLBACK" : show_toolbar,
+}
 
 
 STATIC_URL = "static/"
