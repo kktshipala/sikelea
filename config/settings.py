@@ -68,6 +68,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'debug_toolbar',
    #s "advanced_filters"
   #  "postgressql.connector.django",
 
