@@ -154,18 +154,18 @@ ASGI_APPLICATION = "config.asgi.application"
 
 DATABASES = {
     
-   'default':dj_database_url.parse(env('DATABASE_URL'))
+  # 'default':dj_database_url.parse(env('DATABASE_URL'))
       
-       # 'default':{
+        'default':{
      
-    #  'ENGINE' :'django.db.backends.postgresql',
-      #  'NAME' :'shaty3',
-      #  'USER':'postgres',
-      # 'PASSWORD' : 'Shaty@121',
-      # 'HOST' :'localhost',
-      # 'PORT' :'5432',
+      'ENGINE' :'django.db.backends.postgresql',
+        'NAME' :'shaty3',
+        'USER':'postgres',
+       'PASSWORD' : 'Shaty@121',
+       'HOST' :'localhost',
+       'PORT' :'5432',
 
-   #}
+   }
       
      
 
@@ -221,11 +221,6 @@ STATIC_URL = "/staticfiles/"
 MEDIA_URL = "/media/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-     "/media/course_files/"
-     "/media/course_videos/"
-     "/media/profile_pictures/"
-     "/media/registration_form/"
-     "/media/result_sheet"
 
 ]
 
@@ -234,11 +229,6 @@ STATICFILES_DIRS = [
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-course_files = os.path.join(MEDIA_ROOT, "course_files")
-course_videos = os.path.join(MEDIA_ROOT, "course_videos")
-profile_pictures = os.path.join(MEDIA_ROOT, "profile_pictures")
-registration_form = os.path.join(MEDIA_ROOT, "registration_form")
-result_sheet = os.path.join(MEDIA_ROOT, "result_sheet")
 #MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
