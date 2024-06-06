@@ -154,18 +154,18 @@ ASGI_APPLICATION = "config.asgi.application"
 
 DATABASES = {
     
-  # 'default':dj_database_url.parse(env('DATABASE_URL'))
+  'default':dj_database_url.parse(env('DATABASE_URL'))
       
-        'default':{
+        #'default':{
      
-      'ENGINE' :'django.db.backends.postgresql',
-        'NAME' :'shaty3',
-        'USER':'postgres',
-       'PASSWORD' : 'Shaty@121',
-       'HOST' :'localhost',
-       'PORT' :'5432',
+    #  'ENGINE' :'django.db.backends.postgresql',
+     #   'NAME' :'shaty3',
+     #   'USER':'postgres',
+     #  'PASSWORD' : 'Shaty@121',
+    #   'HOST' :'localhost',
+     #  'PORT' :'5432',
 
-   }
+  # }
       
      
 
@@ -223,10 +223,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 
 ]
-
-
-
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 #MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
