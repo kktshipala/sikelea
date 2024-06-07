@@ -321,7 +321,7 @@ def deallocate_course(request, pk):
 def handle_file_upload(request, slug):
     course = Course.objects.get(slug=slug)
     if request.method == "POST":
-        form = UploadFormFile(request.POST, request.FILES, {"course": course})
+        form = UploadFormFile(request.POST, request.FILES.get, {"course": course})
         # file_name = request.POST.get('name')
         if form.is_valid():
             form.save()
@@ -344,7 +344,7 @@ def handle_file_edit(request, slug, file_id):
     course = Course.objects.get(slug=slug)
     instance = Upload.objects.get(pk=file_id)
     if request.method == "POST":
-        form = UploadFormFile(request.POST, request.FILES, instance=instance)
+        form = UploadFormFile(request.POST, request.FILES.get, instance=instance)
         # file_name = request.POST.get('name')
         if form.is_valid():
             form.save()
@@ -378,7 +378,7 @@ def handle_file_delete(request, slug, file_id):
 def handle_video_upload(request, slug):
     course = Course.objects.get(slug=slug)
     if request.method == "POST":
-        form = UploadFormVideo(request.POST, request.FILES, {"course": course})
+        form = UploadFormVideo(request.POST, request.FILES.get, {"course": course})
         if form.is_valid():
             form.save()
             messages.success(
@@ -408,7 +408,7 @@ def handle_video_edit(request, slug, video_slug):
     course = Course.objects.get(slug=slug)
     instance = UploadVideo.objects.get(slug=video_slug)
     if request.method == "POST":
-        form = UploadFormVideo(request.POST, request.FILES, instance=instance)
+        form = UploadFormVideo(request.POST, request.FILES.get, instance=instance)
         if form.is_valid():
             form.save()
             messages.success(

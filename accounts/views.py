@@ -176,7 +176,7 @@ def admin_panel(request):
 @login_required
 def profile_update(request):
     if request.method == "POST":
-        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user)
+        form = ProfileUpdateForm(request.POST, request.FILES.get, instance=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, "Your profile has been updated successfully.")
@@ -254,7 +254,7 @@ def staff_add_view(request):
 def edit_staff(request, pk):
     instance = get_object_or_404(User, is_lecturer=True, pk=pk)
     if request.method == "POST":
-        form = ProfileUpdateForm(request.POST, request.FILES, instance=instance)
+        form = ProfileUpdateForm(request.POST, request.FILES.get, instance=instance)
         full_name = instance.get_full_name
         if form.is_valid():
             form.save()
@@ -343,7 +343,7 @@ def edit_student(request, pk):
     # instance = User.objects.get(pk=pk)
     instance = get_object_or_404(User, is_student=True, pk=pk)
     if request.method == "POST":
-        form = ProfileUpdateForm(request.POST, request.FILES, instance=instance)
+        form = ProfileUpdateForm(request.POST, request.FILES.get, instance=instance)
         full_name = instance.get_full_name
         if form.is_valid():
             form.save()
