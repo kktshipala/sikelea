@@ -47,9 +47,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False #True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']#hostname
 
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
@@ -235,6 +235,10 @@ STATICFILES_FINDERS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 #MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
+
+
+
+
 
 # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
 # and renames the files with unique names for each version to support long-term caching
