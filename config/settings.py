@@ -26,6 +26,7 @@ django.utils.encoding.python_2_unicode_compatible = python_2_unicode_compatible
 import collections.abc
 import sys
 from collections.abc import MutableSet
+from storages.backends.s3boto3 import S3Boto3Storage
 
 
 
@@ -65,6 +66,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "storages"
    #s "advanced_filters"
   #  "postgressql.connector.django",
 
@@ -150,7 +152,7 @@ ASGI_APPLICATION = "config.asgi.application"
 # so consider using postgresql instead
 
 
-
+#DATABASES ['default']='default':dj_database_url.parse(env('DATABASE_URL'))
 DATABASES = {
     
   'default':dj_database_url.parse(env('DATABASE_URL'))
@@ -171,7 +173,7 @@ DATABASES = {
     }
     
     
-
+#DATABASES ['default']='default':dj_database_url.parse(env('DATABASE_URL'))
 
 
 
@@ -283,12 +285,13 @@ REST_FRAMEWORK = {
 #STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
 
 
-#AWS_ACCESS_KEY_ID ="AKIAU6GD3B4R6IKQGUDR"
-##AWS_SECRET_ACCESS_KEY ="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"
-#AWS_STORAGE_BUCKET_NAME ="backendbucketlms"
-#AWS_S3_SIGNATURE_NAME ="s3v4"
-#AWS_S3_REGION_NAME ="us-east-1"
-#AWS_S3_FILE_OVERWRITE ="False"
-#AWS_DEFAULT_AC ="None"
-#AWS_S3_VERITY ="True"
-#DEFAULT_FILE_STORAGE ="storeges.backends.s3botos.S3Boto3Storage"
+AWS_ACCESS_KEY_ID ="AKIAVRUVVY4YYIZ2P475"
+AWS_SECRET_ACCESS_KEY ="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"
+AWS_STORAGE_BUCKET_NAME ="myfistbucketshaty"
+AWS_S3_SIGNATURE_NAME ="s3v4"
+AWS_S3_REGION_NAME ="eu-north-1"
+AWS_S3_FILE_OVERWRITE ="False"
+AWS_DEFAULT_AC ="None"
+AWS_S3_VERITY ="True"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
