@@ -494,7 +494,7 @@ def result_sheet_pdf_view(request, id):
 
     print("\nsettings.MEDIA_ROOT", settings.MEDIA_ROOT)
     print("\nsettings.STATICFILES_DIRS[0]", settings.STATICFILES_DIRS[0])
-    logo = settings.STATICFILES_DIRS[0] + "/SEKELEA/img/schoollogo7.png"
+    logo = settings.STATICFILES_DIRS[0] + "/SEKELEA/img/school4.jpg"
     im = Image(logo, 1 * inch, 1 * inch)
     im.__setattr__("_offs_x", -200)
     im.__setattr__("_offs_y", -45)
@@ -914,7 +914,7 @@ def course_registration_form(request):
     image_offset = default_offsets.get(count, (680, 2700))
 
     # Add the logo
-    logo = settings.STATICFILES_DIRS[0] + "/SIKELEA/img/schoollogo7.png"
+    logo = settings.STATICFILES_DIRS[0] + "/SIKELEA/img/school4.jpg"
     im_logo = Image(logo, 1 * inch, 1 * inch)
     im_logo.__setattr__("_offs_x", -218)
     im_logo.__setattr__("_offs_y", image_offset[0])  # Use the appropriate y-offset
