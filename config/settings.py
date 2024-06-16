@@ -48,7 +48,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #True
+DEBUG = True #True
 
 ALLOWED_HOSTS = ['*']#hostname
 
@@ -285,13 +285,13 @@ REST_FRAMEWORK = {
 #STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
 
 
-AWS_ACCESS_KEY_ID ="AKIAVRUVVY4YYIZ2P475"
-AWS_SECRET_ACCESS_KEY ="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"
-AWS_STORAGE_BUCKET_NAME ="myfistbucketshaty"
-AWS_S3_SIGNATURE_NAME ="s3v4"
-AWS_S3_REGION_NAME ="eu-north-1"
-AWS_S3_FILE_OVERWRITE ="False"
-AWS_DEFAULT_AC ="None"
-AWS_S3_VERITY ="True"
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID2 ="AKIAVRUVVY4YYIZ2P475"
+AWS_SECRET_ACCESS_KEY2 ="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"
+AWS_STORAGE_BUCKET_NAME2 ="myfistbucketshaty"
+AWS_S3_SIGNATURE_NAME2 ="s3v4"
+AWS_S3_REGION_NAME2 ="eu-north-1"
+AWS_S3_FILE_OVERWRITE2 ="False"
+AWS_DEFAULT_AC2 ="None"
+AWS_S3_VERITY2 ="True"
+DEFAULT_FILE_STORAGE2 = 'storages.backends.s3boto3.S3Boto3Storage'
 
